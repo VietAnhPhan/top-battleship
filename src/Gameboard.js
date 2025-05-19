@@ -169,6 +169,11 @@ export class Gameboard {
           // console.log(blankSpace);
           this.board[blankSpace.x][blankSpace.y].shot = true;
         });
+
+        Helper.removeCoordsFromSquareCoords(
+          ship.blankSpaces,
+          this.squareCoords
+        );
       }
     }
 

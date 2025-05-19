@@ -9,7 +9,7 @@ export class GameController {
     this.computerPlayer = null;
     this._humanGameBoard = null;
     this._computerGameBoard = null;
-    this._playerTurn = null;
+    this._playerTurn = [];
     this.humanGameBoardUI = null;
     this.computerGameBoardUI = null;
 
@@ -43,6 +43,7 @@ export class GameController {
   initPlayers() {
     this.humanPlayer = new Player("human");
     this.computerPlayer = new Player("computer");
+    this.playerTurn = this.computerPlayer.role;
   }
 
   initGameBoardLogic() {
@@ -108,7 +109,7 @@ export class GameController {
     else if (this.computerPlayer.gameBoard.areSunk()) alert("Human win!!!");
   }
 
-  playGame() {
+  playGame(shotCoord = null) {
     if (this.isEndGame()) {
       this.showWhoWin();
       return;
@@ -120,8 +121,6 @@ export class GameController {
     //   this.endGame(this.humanPlayer);
     //   return;
     // }
-
-    this.playerTurn = this.humanPlayer;
   }
 
   get playerTurn() {
@@ -149,5 +148,11 @@ export class GameController {
     );
 
     return shotCoord;
+  }
+
+  isShotSquareCoord(gameBoard, shotCoord) {
+    if (gameBoard[shotCoord.x][shotCoord.y].shot) {
+      return true;
+    } else return false;
   }
 }

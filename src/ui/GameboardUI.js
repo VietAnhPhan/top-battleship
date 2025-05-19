@@ -106,7 +106,14 @@ export class GameboardUI {
             )
               return;
 
-            if (!gameController.isEndGame() && gameController.isHumanTurn()) {
+            if (!gameController.isEndGame()) {
+              if (
+                gameController.isShotSquareCoord(this.gameboard.board, {
+                  x: x,
+                  y: y,
+                })
+              )
+                return;
               player.attack(gameController.computerPlayer, { x: x, y: y });
               //   console.log(x, y);
               //   if (!player.board.receiveAttack({ x: x, y: y })) return;
@@ -116,6 +123,7 @@ export class GameboardUI {
               //     gameController.endGame(player);
               //     return;
               //   }
+
               gameController.playGame();
             }
             // if (player.gameBoard.areSunk()) {

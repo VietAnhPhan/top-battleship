@@ -46,4 +46,17 @@ export class Helper {
       }
     }
   }
+
+  static removeCoordsFromSquareCoords(removedCoords, squareCoords) {
+    for (let i = 0; i < removedCoords.length; i++) {
+      for (let j = 0; j < squareCoords.length; j++) {
+        if (
+          removedCoords[i].x === squareCoords[j].x &&
+          removedCoords[i].y === squareCoords[j].y
+        ) {
+          squareCoords.splice(j, 1);
+        }
+      }
+    }
+  }
 }
