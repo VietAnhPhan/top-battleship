@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+}
+
+.player-board {
+    /* display: grid;
+    grid-template-columns: repeat(10, 2em);
+    grid-template-rows: repeat(10, 2em); */
+    display: flex;
+    /* align-items: end; */
+    gap: 3rem;
+}
+
+.player-board__battle-ground {
+    /* display: grid;
+    grid-template-columns: repeat(10, 2em);
+    grid-template-rows: repeat(10, 2em); */
+    display: flex;
+    align-items: end;
+}
+
+
+.player-board__label {
+    margin-top: 20px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+thead {}
+
+th {
+    width: 32px;
+}
+
+.square {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+}
+
+.square:hover {
+    border: 1px solid green;
+    background: rgba(0, 0, 255, .05);
+}
+
+.square-occupied {
+    border: 2px solid #00f;
+    background: rgba(0, 0, 255, .1);
+}
+
+.ship-healthpoint {
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 0, 255, .1);
+}
+
+.ship-healthpoint[get-hit=true] {
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 0, 0, .05);
+}
+
+.ship-get-shot {
+    border: 2px solid red;
+    background: rgba(255, 0, 0, .05);
+}
+
+.ship-healthpoints-length {
+    display: flex;
+    gap: 3px;
+}
+
+.square-get-shot {
+    border: 2px solid darkgray;
+    background: rgba(65, 63, 63, 0.3);
+}
+
+.square-blank-space {
+    border: 2px solid red !important;
+}
+
+.square-unoccupied {
+    border: 1px solid #b4b4ff;
+}
+
+.number-order {
+    height: 32px;
+    line-height: 32px;
+}
+
+.axis-y {
+    padding-right: 10px;
+}
+
+#footer {
+    margin-top: 100px;
+    color: #999;
+    font-size: 12px;
+}
