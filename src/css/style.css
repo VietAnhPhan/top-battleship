@@ -95,10 +95,7 @@ th {
     gap: 3px;
 }
 
-.square-get-shot {
-    border: 2px solid darkgray;
-    background: rgba(65, 63, 63, 0.3);
-}
+
 
 .square-blank-space {
     border: 2px solid red !important;
@@ -121,4 +118,9 @@ th {
     margin-top: 100px;
     color: #999;
     font-size: 12px;
+}
+
+.square-get-shot {
+    border: 1px solid darkgray;
+    background: #d7d7dc;
 }
